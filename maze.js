@@ -9,15 +9,17 @@ window.onload = function() {
 	mazeStart = document.getElementById("start");
 	mazeEnd = document.getElementById("end");
 
-
+	// Q. 1 & 2
 	for (var i = 0; i < mazeBoundaries.length - 1; i++) {
 		mazeBoundaries[i].onmouseover = outOfBounds;
 	}
 
-	end.onmouseover = checkForWin;
+	//Q3.
+	mazeEnd.onmouseover = checkForWin;
+
+	//Q4.
+	mazeStart.onclick = restartMaze;
 }
-
-
 
 function outOfBounds(){ //question 1 & 2
 
@@ -36,6 +38,19 @@ function checkForWin(){
 		alert("You win!");
 	}
 }
+
+function restartMaze(){
+
+	crossedBoundary = false;
+
+	for (var i = 0; i < mazeBoundaries.length - 1; i++){
+
+			mazeBoundaries[i].classList.remove("youlose");
+	}
+
+}
+
+
 
 
 
