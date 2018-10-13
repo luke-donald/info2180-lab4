@@ -1,3 +1,7 @@
+//Luke Donald
+//INFO2180 Lab 4
+//ID No. 620103232
+
 var mazeBoundaries;
 var mazeStart;
 var mazeEnd;
