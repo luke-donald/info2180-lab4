@@ -3,6 +3,8 @@ var mazeStart;
 var mazeEnd;
 var crossedBoundary = false;
 var mazeStatus;
+var maze;
+var restartNum = 0;
 
 window.onload = function() {
 
@@ -10,6 +12,7 @@ window.onload = function() {
 	mazeStart = document.getElementById("start");
 	mazeEnd = document.getElementById("end");
 	mazeStatus = document.getElementById("status");
+	maze = document.getElementById("maze");
 
 	// Q. 1 & 2
 	for (var i = 0; i < mazeBoundaries.length - 1; i++) {
@@ -21,6 +24,8 @@ window.onload = function() {
 
 	//Q4.
 	mazeStart.onclick = restartMaze;
+
+	maze.onmouseleave = checkForCheat;
 }
 
 function outOfBounds(){ //question 1 & 2
@@ -52,9 +57,16 @@ function restartMaze(){
 			mazeBoundaries[i].classList.remove("youlose");
 	}
 
+	restartNum += 1;
 }
 
+function checkForCheat(){
 
+	if (restartNum >= 1) {
+
+		outOfBounds();
+	}
+}
 
 
 
